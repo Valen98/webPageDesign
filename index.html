@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leo Wahlandt Website</title>
+    <title>Dan Wahlandt Website</title>
     <link rel="stylesheet" href="indexStyle.css">
 </head>
 <body>
@@ -11,8 +11,13 @@
         <nav>
             <div class="navLinks">
                 <ul class="navUL">
-                    <li class="navLI">Home</li>
-                    <li class="navLI">Projects</li>
+                    <a href="#home">
+                        <li class="navLI">Home</li>
+                    </a>
+                    <a href=#projects>
+                        <li class="navLI">Projects</li>
+                    </a>
+                    
                     <a href="./aboutMe.html">
                         <li class="navLI">About Me</li>
                     </a>
@@ -24,7 +29,7 @@
         </nav>
     </div>
 
-    <div class="mainContentParent">
+    <div class="mainContentParent" id="home">
         <div class="mainContentLeft">
             <div class="leftContent1">
                 <img src="./image/leoWahlandt.jpg" class="mainImage" alt="Could not fetch image, please reload the page.">
@@ -34,7 +39,7 @@
         <div class="mainContentRight">
             <div class="rightContent1">
                 <h1 class="name"></h1>
-                <h1> I Am Leo Wahlandt &amp; This Is Me</h1>
+                <h1> I Am Dan Wahlandt &amp; This Is Me</h1>
                 <p>
                     I am an exchange student from Sweden, Skövde University. I am studying Computer Science and I am on my third year.
                     What I like about Computer Science is how creative and fun the problem solving can be. You can solve issues 
@@ -58,43 +63,48 @@
             </div>
             <div class="secondContent">
                 <div class="container">
-                    <form action="#">
+                    <form action="https://osiris.ubishops.ca/jensen/echo.php" method="POST">
                         <div class="formRow">
                            <div class="inputData">
-                              <input type="text" class="inputField" required>
+                              <input type="text" class="inputField" name="FirstName" required>
                               <div class="underline"></div>
                               <label for="">First Name</label>
                            </div>
                            <div class="inputData">
-                              <input type="text" class="inputField" required>
+                              <input type="text" class="inputField" name="LastName" required>
                               <div class="underline"></div>
                               <label for="">Last Name</label>
                            </div>
                         </div>
                         <div class="formRow">
                            <div class="inputData">
-                              <input type="text" class="inputField" required>
+                              <input type="text" class="inputField" name="Email" required>
                               <div class="underline"></div>
                               <label for="">Email Address</label>
                            </div>
                            <div class="inputData">
-                              <input type="text" class="inputField" required>
+                              <input type="text" class="inputField" name="Website" required>
                               <div class="underline"></div>
                               <label for="">Website Name</label>
                            </div>
                         </div>
                         <div class="formRow">
                         <div class="inputData textarea">
-                           <textarea rows="8" cols="80" required></textarea>
+                           <textarea rows="8" cols="80" required name="Message"></textarea>
                            <br />
                            <div class="underline"></div>
                            <label for="">Write your message</label>
                            <br />
                            </div>
-                           <div class="submitBtnDiv">
-                                <button class="submitBtn">Submit</button>
-                           </div>
-                           
+                       </div>
+                       <div>
+                            <input type="checkbox" class="inputField checkbox" name="TermsServices"required>
+                            <label class="termsServices">Terms of Services</label>
+                        </div>
+                        <div class="submitBtnDiv">
+                            <button class="resetBtn" type="reset">Reset</button>
+                            <button class="submitBtn">Submit</button>
+                        </div>
                      </form>
                 </div>
                 
@@ -104,7 +114,36 @@
     </div>
     <hr class="divider">
     <div class="thirdContentParent">
-            <h1>More to come</h1>
+        <div id="projects" class="projects">
+            <h1>All my projects</h1>
+            <div class="tableBody">
+                <table>
+                    <thead>
+                      <tr>
+                        <th>Project Name</th>
+                        <th>Date</th>
+                      </tr>
+                     </thead>
+                     <tbody>
+                       <tr>
+                         <td><a href="lab1.html">A first HTML Page</a></td>
+                         <td>September 13 2023</td>
+                       </tr>
+                       <tr>
+                          <td><a href="./aboutMe.html">A Table </a></td>
+                          <td>September 20 2023</td>
+                        </tr>
+                        <tr>
+                          <td><a href="./aboutMe.html">A Second page, CSS style and images</a></td>
+                          <td>September 27 2023</td>
+                        </tr>
+                    </tbody>
+                  </table>
+            </div>
+            
+        </div>
+
+
     </div>
 </body>
 </html>

@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* 
     Colors
     Main: #FAF1E4 
@@ -20,6 +24,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    z-index: 2;
 }
 
 .navLinks {
@@ -133,13 +138,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40vh;
+    height:70vh;
     width: 70%;
     flex-direction: column;
 }
 .secondContentParent {
     width: 100%;
-    height: 60vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -258,9 +263,17 @@ form .formRow .textarea {
     outline: none;
 }
 
+.termsServices {
+    margin-bottom: 0.5rem;
+}
+
+.checkbox {
+    margin-left: 1rem;
+}
+
 .submitBtn {
     background-color: #9EB384;
-    width: 100%;
+    width: 40%;
     height: 3rem;
     border-style: none;
     box-sizing: border-box;
@@ -275,8 +288,30 @@ form .formRow .textarea {
 }
 
 .submitBtnDiv {
-    width: 30%;
+    display: flex;
+    width: 90%;
     padding: 1rem;
+    justify-content: space-between;
+}
+
+.resetBtn {
+    background-color: #9EB384;
+    width: 40%;
+    height: 3rem;
+    border-style: none;
+    box-sizing: border-box;
+    display: inline-block;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+}
+.resetBtn:hover {
+    cursor: pointer;
+    background-color: #9FC385;
+}
+
+.checkbox:hover {
+    cursor: pointer;
 }
 
 .submitTitle {
@@ -284,6 +319,39 @@ form .formRow .textarea {
 }
 
 .thirdContentParent {
-    height: 100vh;
+    height: 80vh;
     width: 100%;
+}
+
+.projects {
+    width: 100%;
+    height: 80vh;
+    background-image: url("./image/bgImage.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover
+}
+.projects h1 {
+    padding-left: 3rem;
+}
+.tableBody{
+    width: 80%;
+    padding: 3rem;
+}
+
+table{
+    border-collapse: collapse;
+    width: 50%;
+}
+  
+th, td{
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){
+    background-color: #9EB384;
+}
+tr{
+    border: solid 1px black;
 }
