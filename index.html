@@ -14,7 +14,7 @@
                     <a href="#home">
                         <li class="navLI">Home</li>
                     </a>
-                    <a href=#projects>
+                    <a href=#projects onclick="projectPressed()">
                         <li class="navLI">Projects</li>
                     </a>
                     
@@ -102,7 +102,7 @@
                             <label class="termsServices">Terms of Services</label>
                         </div>
                         <div class="submitBtnDiv">
-                            <button class="resetBtn" type="reset">Reset</button>
+                            <button class="resetBtn" type="reset" onclick="resetForm()">Reset</button>
                             <button class="submitBtn">Submit</button>
                         </div>
                      </form>
@@ -111,7 +111,11 @@
             </div>
         </div>
     </div>
+    <div class="buttonResetPressed">
+        <p id="buttonReset"></p>
     </div>
+    </div>
+
     <hr class="divider">
     <div class="thirdContentParent">
         <div id="projects" class="projects">
@@ -142,7 +146,51 @@
             </div>
             
         </div>
+    </div>
+    <hr class="divider">
+    <div class="twoLanguages">
+        <h3 onclick="html()" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Press this text to read about HTML</h3>
+        <p id="HTML"></p>
+        <h3 onclick="javaScript()" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Press this to read about javaScript</h3>
+        <p id="javaScript"></p>
+    </div>
+    <div class="footer">
+        <div class="javaScript" onmouseover="this.style.left='1rem', this.style.color='#9FC385'" onmouseout="this.style.left='0rem', this.style.color='black'">
+            
+            <h3 id="date" ></h3>
+            <p id="modification">Last time this file was modified: </p>
+            <p>Hover over the text</p>
+            <script>
+                var date = new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}) 
+                document.getElementById("date").innerHTML = "Todays date is " + date
+                document.getElementById("modification").innerHTML = "Last time this file was modified: " + document.lastModified
 
+                function projectPressed() {
+                    setTimeout(function() {
+                        alert("This is all my other pages. Click on the blue text to go to the other pages")
+                    }, 1000)
+                    
+                }
+
+                function resetForm() {
+                    alert("The form is now empty")
+                    document.getElementById("buttonReset").innerHTML = "Oh no, you reset the form... Now you have to fill it again... "
+                    
+                }
+
+                function html() {
+                    document.getElementById("HTML").innerHTML = "HTML is the HyperText Markup Language used to describe the content of web pages. It utilizes tags such as <table> to control the appearance of the text."
+                }
+
+                function javaScript() {
+                    document.getElementById("javaScript").innerHTML = "JavaScript, often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS."
+                }
+            </script>
+            <noscript>
+                Script is disabled, please turn it on.
+            </noscript>
+            
+        </div>
 
     </div>
 </body>

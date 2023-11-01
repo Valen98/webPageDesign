@@ -318,6 +318,11 @@ form .formRow .textarea {
     padding-bottom: 1rem;
 }
 
+.buttonResetPressed {
+    background-color: #9EB384;
+    padding-left: 1rem;
+    font-size: 1rem;
+}
 .thirdContentParent {
     height: 80vh;
     width: 100%;
@@ -354,4 +359,22 @@ tr:nth-child(even){
 }
 tr{
     border: solid 1px black;
+}
+
+.footer {
+    height: 10vh;
+    width: 100%;
+}
+
+.javaScript {
+    position: relative;
+    padding: 1rem;
+}
+
+.twoLanguages {
+    padding-left: 1rem;
+}
+
+.twoLanguages h3 {
+    cursor: pointer;
 }
