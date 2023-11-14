@@ -11,19 +11,17 @@
         <nav>
             <div class="navLinks">
                 <ul class="navUL">
-                    <a href="#home">
-                        <li class="navLI">Home</li>
-                    </a>
-                    <a href=#projects onclick="projectPressed()">
-                        <li class="navLI">Projects</li>
-                    </a>
-                    
-                    <a href="./aboutMe.html">
-                        <li class="navLI">About Me</li>
-                    </a>
-                    <a>
-                        <li class="navLI">CV</li>
-                    </a>
+                    <li class="navLI">
+                        <a href="#home">Home</a>
+                    </li>
+                
+                    <li class="navLI">
+                        <a href=#projects onclick="projectPressed()">Projects</a>
+                    </li>
+                
+                    <li class="navLI">
+                        <a href="./aboutMe.html">About Me</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -38,8 +36,7 @@
 
         <div class="mainContentRight">
             <div class="rightContent1">
-                <h1 class="name"></h1>
-                <h1> I Am Leo Wahlandt &amp; This Is Me</h1>
+                <h1 class="name"> I Am Leo Wahlandt &amp; This Is Me</h1>
                 <p>
                     I am an exchange student from Sweden, Skövde University. I am studying Computer Science and I am on my third year.
                     What I like about Computer Science is how creative and fun the problem solving can be. You can solve issues 
@@ -47,9 +44,12 @@
                     invented in Sweden and it's a huge sport in Scandinavia. 
                 </p>
                 <div class="aboutBtnDiv">
-                    <a href="aboutMe.html">
-                        <button class="aboutBtn">Read more</button>
+                    <a href="aboutMe.html" class="aboutLink">
+                        <div class="aboutBtn">
+                            Read more
+                        </div>
                     </a>
+                    
                 </div>    
             </div>
         </div>
@@ -66,40 +66,40 @@
                     <form action="./result.php" method="POST">
                         <div class="formRow">
                            <div class="inputData">
-                              <input type="text" class="inputField" name="FirstName" required>
+                              <input type="text" class="inputField" name="FirstName" id="firstName" required>
                               <div class="underline"></div>
-                              <label for="">First Name</label>
+                              <label for="firstName">First Name</label>
                            </div>
                            <div class="inputData">
-                              <input type="text" class="inputField" name="LastName" required>
+                              <input type="text" class="inputField" name="LastName" id="lastName" required>
                               <div class="underline"></div>
-                              <label for="">Last Name</label>
+                              <label for="lastName">Last Name</label>
                            </div>
                         </div>
                         <div class="formRow">
                            <div class="inputData">
-                              <input type="text" class="inputField" name="Email" required>
+                              <input type="text" class="inputField" name="Email" id="Email" required>
                               <div class="underline"></div>
-                              <label for="">Email Address</label>
+                              <label for="Email">Email Address</label>
                            </div>
                            <div class="inputData">
-                              <input type="text" class="inputField" name="Website" required>
+                              <input type="text" class="inputField" name="Website" id="Website" required>
                               <div class="underline"></div>
-                              <label for="">Website Name</label>
+                              <label for="Website">Website Name</label>
                            </div>
                         </div>
                         <div class="formRow">
                         <div class="inputData textarea">
-                           <textarea rows="8" cols="80" required name="Message"></textarea>
-                           <br />
+                           <textarea rows="8" cols="80" required name="Message" id="Message"></textarea>
+                           <br>
                            <div class="underline"></div>
-                           <label for="">Write your message</label>
-                           <br />
+                           <label for="Message">Write your message</label>
+                           <br>
                            </div>
                        </div>
                        <div>
-                            <input type="checkbox" class="inputField checkbox" name="TermsServices"required>
-                            <label class="termsServices">Terms of Services</label>
+                            <input type="checkbox" class="inputField checkbox" name="TermsServices" id="TermsServices" required>
+                            <label class="termsServices" for="TermsServices">Terms of Services</label>
                         </div>
                         <div class="submitBtnDiv">
                             <button class="resetBtn" type="reset" onclick="resetForm()">Reset</button>
@@ -111,10 +111,9 @@
             </div>
         </div>
     </div>
-    <div class="buttonResetPressed">
-        <p id="buttonReset"></p>
-    </div>
-    </div>
+        <div class="buttonResetPressed">
+            <p id="buttonReset"></p>
+        </div>
 
     <hr class="divider">
     <div class="thirdContentParent">
@@ -157,9 +156,17 @@
     <div class="footer">
         <div class="javaScript" onmouseover="this.style.left='1rem', this.style.color='#9FC385'" onmouseout="this.style.left='0rem', this.style.color='black'">
             
-            <h3 id="date" ></h3>
+            <h3 id="date">Date</h3>
             <p id="modification">Last time this file was modified: </p>
             <p>Hover over the text</p>
+
+            <form id="jsForm">
+                <input type="text" class="inputField" name="firstName" id="firstNameCookie" required>
+                <input type="text" class="inputField" name="lastName" id="lastNameCookie" required>    
+                <button class="submitBtnJS" onclick="setCookie()">SetCookie</button>
+               
+            </form>
+            <button class="submitBtnJS" onclick="checkCookie()">GetCookie</button>
             <script>
                 var date = new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}) 
                 document.getElementById("date").innerHTML = "Todays date is " + date
@@ -184,6 +191,41 @@
 
                 function javaScript() {
                     document.getElementById("javaScript").innerHTML = "JavaScript, often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS."
+                }
+
+                function setCookie() {
+                    let form = document.getElementById('jsForm');
+                    let firstName = form.elements['firstNameCookie'].value;
+                    let lastName = form.elements['lastNameCookie'].value;
+                    document.cookie = `firstName=${firstName},lastName=${lastName}`;
+                }
+
+                function getCookie(cname) {
+                    let name = cname + "=";
+                    let decodedCookie = decodeURIComponent(document.cookie);
+                    let ca = decodedCookie.split(',');
+                    
+                    for (let i = 0; i < ca.length; i++) {
+                        let c = ca[i];
+                        console.log(c)
+                        while (c.charAt(0) == ' ') {
+                            c = c.substring(1);
+                        }
+                        if (c.indexOf(name) == 0) {
+                            return c.substring(name.length, c.length);
+                        }
+                    }
+                    return "";
+                }
+
+                function checkCookie() {
+                    let firstName = getCookie("firstName");
+                    let lastName = getCookie("lastName");
+                    if ((firstName === "" || firstName === null) && (lastName === "" || lastName === null)) {
+                        setCookie();
+                    }else {
+                        alert("Welcome back " + firstName + " " + lastName)
+                    }
                 }
             </script>
             <noscript>

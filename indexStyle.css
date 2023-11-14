@@ -116,12 +116,19 @@ html {
     height: 3rem;
     border-style: none;
     box-sizing: border-box;
-    display: inline-block;
+    display: flex;
     outline: none;
-    
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutLink {
+    color:black;
     text-align: center;
     text-decoration: none;
 }
+
 .aboutBtn:hover {
     cursor: pointer;
     background-color: #9FC385;
